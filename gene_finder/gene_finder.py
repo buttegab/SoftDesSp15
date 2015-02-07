@@ -259,10 +259,10 @@ dna = load_seq("./data/X73525.fa")
 
 print gene_finder(dna)
 
+#this should be totally and completely done now
 
 
 
-
-# if __name__ == "__main__":
-#     import doctest
-#     doctest.testmod() 
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod() 
