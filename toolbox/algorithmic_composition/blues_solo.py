@@ -56,10 +56,3 @@ for i in range(7):
 solo >> "blues_solo.wav"
 
 
-#redo
-for i in range(4):
-    lick = random.choice(licks)
-    for note in lick:
-        
-        curr_note += note[0]
-        add_note(solo, bass, blues_scale[curr_note], note[1], beats_per_minute, 1.0)
