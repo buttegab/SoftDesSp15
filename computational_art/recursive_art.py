@@ -17,12 +17,17 @@ def build_random_function(min_depth, max_depth):
     """
     # TODO: implement this
     return build_helper(random.randint(min_depth, max_depth))
+    #the idea was for the random depth to vary across the same function. Ex one function
+    #could be nested to 6 functions deep before hitting x and 9 functions deep before hitting y
+    #this gets the job done and really isn't very different, but thought you should know its
+    #slightly different than the intention of the assignment
 
 
 def build_helper(depth):
     if depth == 0:
         return random.choice(["x", "y"])
     rando = random.choice(["negate", "square", "sin_pi", "cos_pi", "product", "avg"])
+    #try to avoid variable names that are one letter off of another one.
     if rando == "product" or rando == "avg":
         return [rando, build_helper(depth-1), build_helper(depth-1)]
     else:
@@ -98,6 +103,8 @@ def remap_interval(val, input_interval_start, input_interval_end, output_interva
     out2 = output_interval_end 
     out1 = output_interval_start
     diff2 = out2-out1
+    #nitpicky point: try to avoid variable names like in1, in2, in3 etc. 
+    #casting it to a float is more explicit and easier to read.
     val+=.0
     proportion1 = (val-in1)/diff1
     output = out1 + proportion1*diff2  #added to out1 because otherwise it would not fall appropriately in the output interval
